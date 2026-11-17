@@ -27,6 +27,9 @@ jobs:
       - name: Generate Android platform files
         run: flutter create --platforms=android --project-name lawyer_agenda .
 
+      - name: Fix JVM target mismatch
+        run: echo "kotlin.jvm.target.validation.mode=warning" >> android/gradle.properties
+
       - name: Install dependencies
         run: flutter pub get
 
